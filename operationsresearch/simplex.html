@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Simplex Method</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='simplex.css'>
+    <script src="https://unpkg.com/mathjs/dist/math.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+    <script src='simplex.js'></script>
+</head>
+
+<body>
+    <!-- How to :
+    1. Get no. of decision variables & no. of inequalities
+    2. ask for objective type(max/min), coefficients and inequality type
+    3. normalize and create simplex table
+    solve the simplex table.
+
+    How to solve :
+    1. exit if isSOlved & isUnbounded
+    2. find pivot
+    3. perform pivot
+    4. go to (1.)
+     -->
+    <div ng-app="simplex_app" ng-controller="simplex_ctrl" class="main">
+        <div ng-show="stage=='start'" class="initdiv">
+            <ul>
+                <li>No. of decision variables: <input ng-model="n" type="number"></li>
+                <li>No. of inequalities: <input ng-model="m" type="number"></li>
+                <li><input type="submit" ng-click="inputsystem()" value="Continue"></li>
+            </ul>
+        </div>
+        <div ng-show="stage=='inputsystem'">
+            <div>
+                Maximize f = [
+                <input type="number" ng-model="x" ng-repeat="x in objective track by $index" />
+                ]
+            </div>
+            <div ng-repeat="row in constraints track by $index">
+                <input type="number" ng-repeat="x in row track by $index">
+            </div>
+            <!-- <input type="number" ng-repeat="coeff in objective" ng-model="coeff"> -->
+            <input type="submit" ng-click="solve" value="Solve">
+            
+        </div>
+        <div ng-show="stage=='error'">
+
+        </div>
+        <div ng-show="stage=='solving'" class="solving">
+
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,7 +1,6 @@
-Test GitHub Pages.
-[Preview](https://80avin.github.io/avint.80/)
-
-================================================
+Testing GitHub Pages.
+[Preview](https://80avin.github.io/)
+----------
 
 ## Welcome to GitHub Pages
 
