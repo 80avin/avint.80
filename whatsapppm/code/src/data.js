@@ -119,7 +119,8 @@ export const coord_name = [
   "Suyash Tripathy",
   "Utkarsh Tiwari",
   "Vineet Sharma",
-  "Pranjal Aggarwal"
+  "Pranjal Aggarwal",
+  "Bikky Bhushan"
 ];
 
 export const coord_num = [
@@ -132,7 +133,8 @@ export const coord_num = [
   "9340126220",
   "8318680570",
   "9210347740",
-  "7590052608"
+  "7590052608",
+  "7519159487",
 ];
 
 export const exec = exec_name.map((s, i) => ({
